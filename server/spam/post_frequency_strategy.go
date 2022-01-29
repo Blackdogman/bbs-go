@@ -4,9 +4,10 @@ import (
 	"bbs-go/model"
 	"bbs-go/repositories"
 	"errors"
+	"time"
+
 	"github.com/mlogclub/simple"
 	"github.com/mlogclub/simple/date"
-	"time"
 )
 
 // PostFrequencyStrategy 发表频率限制
@@ -22,9 +23,9 @@ func (PostFrequencyStrategy) CheckTopic(user *model.User, topic model.CreateTopi
 		return nil
 	}
 	var (
-		maxCountInTenMinutes int64 = 1 // 十分钟内最高发帖数量
-		maxCountInOneHour    int64 = 2 // 一小时内最高发帖量
-		maxCountInOneDay     int64 = 3 // 一天内最高发帖量
+		maxCountInTenMinutes int64 = 99 // 十分钟内最高发帖数量
+		maxCountInOneHour    int64 = 99 // 一小时内最高发帖量
+		maxCountInOneDay     int64 = 99 // 一天内最高发帖量
 	)
 
 	if repositories.TopicRepository.Count(simple.DB(), simple.NewSqlCnd().Eq("user_id", user.Id).
@@ -51,9 +52,9 @@ func (s PostFrequencyStrategy) CheckArticle(user *model.User, form model.CreateA
 		return nil
 	}
 	var (
-		maxCountInTenMinutes int64 = 1 // 十分钟内最高发帖数量
-		maxCountInOneHour    int64 = 2 // 一小时内最高发帖量
-		maxCountInOneDay     int64 = 3 // 一天内最高发帖量
+		maxCountInTenMinutes int64 = 99 // 十分钟内最高发帖数量
+		maxCountInOneHour    int64 = 99 // 一小时内最高发帖量
+		maxCountInOneDay     int64 = 99 // 一天内最高发帖量
 	)
 
 	if repositories.ArticleRepository.Count(simple.DB(), simple.NewSqlCnd().Eq("user_id", user.Id).
@@ -81,9 +82,9 @@ func (s PostFrequencyStrategy) CheckComment(user *model.User, form model.CreateC
 	}
 
 	var (
-		maxCountInTenMinutes int64 = 1 // 十分钟内最高发帖数量
-		maxCountInOneHour    int64 = 1 // 一小时内最高发帖量
-		maxCountInOneDay     int64 = 1 // 一天内最高发帖量
+		maxCountInTenMinutes int64 = 99 // 十分钟内最高发帖数量
+		maxCountInOneHour    int64 = 99 // 一小时内最高发帖量
+		maxCountInOneDay     int64 = 99 // 一天内最高发帖量
 	)
 
 	if repositories.CommentRepository.Count(simple.DB(), simple.NewSqlCnd().Eq("user_id", user.Id).

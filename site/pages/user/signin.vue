@@ -71,20 +71,20 @@
               </div>
             </template>
 
-            <div
+            <!-- <div
               v-if="loginMethod.qq || loginMethod.github || loginMethod.osc"
               class="third-party-line"
             >
               <div class="third-party-title">
                 <span>第三方账号登录</span>
               </div>
-            </div>
+            </div> -->
 
-            <div class="third-parties">
+            <!-- <div class="third-parties">
               <github-login v-if="loginMethod.github" :ref-url="ref" />
               <osc-login v-if="loginMethod.osc" :ref-url="ref" />
               <qq-login v-if="loginMethod.qq" :ref-url="ref" />
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -172,7 +172,7 @@ export default {
           },
         })
         this.captchaId = ret.captchaId
-        this.captchaUrl = ret.captchaUrl
+        this.captchaUrl = "/api/captcha/show?captchaId=" + this.captchaId + "&timestamp=" + new Date().getTime();
       } catch (e) {
         this.$message.error(e.message || e)
       }

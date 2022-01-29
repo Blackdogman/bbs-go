@@ -1,44 +1,44 @@
-CREATE DATABASE IF NOT EXISTS `bbsgo_db` DEFAULT CHARACTER SET utf8mb4;
+CREATE DATABASE IF NOT EXISTS `bbs` DEFAULT CHARACTER SET utf8mb4;
 
-USE bbsgo_db;
+USE bbs;
 SET NAMES utf8mb4;
 
 -- 初始化用户表
-CREATE TABLE `t_user`
-(
-    `id`                 bigint(20) NOT NULL AUTO_INCREMENT,
-    `username`           varchar(32)         DEFAULT NULL,
-    `email`              varchar(128)        DEFAULT NULL,
-    `email_verified`     tinyint(1) NOT NULL DEFAULT '0',
-    `nickname`           varchar(16)         DEFAULT NULL,
-    `avatar`             text,
-    `background_image`   text,
-    `password`           varchar(512)        DEFAULT NULL,
-    `home_page`          varchar(1024)       DEFAULT NULL,
-    `description`        text,
-    `score`              bigint(20) NOT NULL,
-    `status`             bigint(20) NOT NULL,
-    `topic_count`        bigint(20) NOT NULL,
-    `comment_count`      bigint(20) NOT NULL,
-    `roles`              text,
-    `type`               bigint(20) NOT NULL,
-    `forbidden_end_time` bigint(20) NOT NULL DEFAULT '0',
-    `create_time`        bigint(20)          DEFAULT NULL,
-    `update_time`        bigint(20)          DEFAULT NULL,
-    PRIMARY KEY (`id`),
-    UNIQUE KEY `username` (`username`),
-    UNIQUE KEY `email` (`email`),
-    KEY `idx_user_score` (`score`),
-    KEY `idx_user_status` (`status`)
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4;
+CREATE TABLE `t_user` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `username` varchar(32) DEFAULT NULL,
+  `email` varchar(128) DEFAULT NULL,
+  `email_verified` tinyint(1) NOT NULL DEFAULT '0',
+  `nickname` varchar(16) DEFAULT NULL,
+  `avatar` text,
+  `background_image` text,
+  `password` varchar(512) DEFAULT NULL,
+  `home_page` varchar(1024) DEFAULT NULL,
+  `description` text,
+  `score` bigint NOT NULL,
+  `status` bigint NOT NULL,
+  `topic_count` bigint NOT NULL DEFAULT 0,
+  `comment_count` bigint NOT NULL DEFAULT 0,
+  `roles` text,
+  `type` bigint NOT NULL DEFAULT '0',
+  `forbidden_end_time` bigint NOT NULL DEFAULT '0',
+  `create_time` bigint DEFAULT NULL,
+  `update_time` bigint DEFAULT NULL,
+  `fans_count` bigint NOT NULL DEFAULT 0,
+  `follow_count` bigint NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `email` (`email`),
+  KEY `idx_user_score` (`score`),
+  KEY `idx_user_status` (`status`)
+);
 
 -- 初始化用户数据（用户名：admin、密码：123456）
 INSERT INTO t_user (`id`, `username`, `nickname`, `avatar`, `email`, `password`, `status`, `create_time`, `update_time`,
                     `roles`, `type`, `description`, `topic_count`, `comment_count`, `score`)
 SELECT 1,
        'admin',
-       'bbsgo站长',
+       '超级管理员',
        '',
        'a@example.com',
        '$2a$10$ofA39bAFMpYpIX/Xiz7jtOMH9JnPvYfPRlzHXqAtLPFpbE/cLdjmS',
