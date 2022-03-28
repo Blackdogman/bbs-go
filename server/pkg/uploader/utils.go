@@ -2,9 +2,10 @@ package uploader
 
 import (
 	"bbs-go/pkg/config"
-	"github.com/mlogclub/simple/date"
 	"mime"
 	"time"
+
+	"github.com/mlogclub/simple/date"
 
 	"github.com/go-resty/resty/v2"
 	"github.com/mlogclub/simple"

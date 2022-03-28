@@ -1,10 +1,10 @@
 <template>
   <div>
-    <my-nav />
+    <!-- <my-nav /> -->
 
     <nuxt />
 
-    <my-footer />
+    <!-- <my-footer /> -->
   </div>
 </template>
 

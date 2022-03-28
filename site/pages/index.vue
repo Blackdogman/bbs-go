@@ -1,28 +1,6 @@
 <template>
   <section class="main">
-    <div class="container main-container left-main size-320">
-      <div class="left-container">
-        <div class="main-content no-padding no-bg topics-wrapper">
-          <div class="topics-nav"><topics-nav :nodes="nodes" /></div>
-          <div class="topics-main">
-            <load-more
-              v-if="topicsPage"
-              v-slot="{ results }"
-              :init-data="topicsPage"
-              url="/api/topic/topics"
-            >
-              <topic-list :topics="results" :show-ad="true" />
-            </load-more>
-          </div>
-        </div>
-      </div>
-      <div class="right-container">
-        <check-in />
-        <site-notice />
-        <score-rank :score-rank="scoreRank" />
-        <friend-links :links="links" />
-      </div>
-    </div>
+    <h1>HelloWorld</h1>
   </section>
 </template>
 
@@ -59,4 +37,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+  h1 {
+    font-size: 72px;
+  }
+</style>
