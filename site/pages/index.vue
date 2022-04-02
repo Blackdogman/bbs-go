@@ -7,7 +7,7 @@
         :title="session.title"
         :description="session.description"
         :thumbnail="session.thumbnail"
-        category="announcement"
+        :category="session.title"
         icon="code"
         :color="session.color"
       />
@@ -17,7 +17,7 @@
         :title="session.title"
         :description="session.description"
         :thumbnail="session.thumbnail"
-        category="announcement"
+        :category="session.title"
         icon="code"
         :color="session.color"
         is-last

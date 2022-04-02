@@ -293,3 +293,15 @@ type UserFeed struct {
 	AuthorId   int64  `gorm:"not null;index:idx_user_id" json:"authorId" form:"authorId"`                                       // 作者编号
 	CreateTime int64  `gorm:"type:bigint;not null;index:idx_search" json:"createTime" form:"createTime"`                        // 数据的创建时间
 }
+
+// ApexSession APEX赛季信息
+type ApexSeesion struct {
+	Model
+	SessionId        string
+	SessionName      string
+	SessionStartTime string
+	SessionEndTime   string
+	SessionDesc      string
+	SessionColor     string
+	SessionImgPath   string
+}
