@@ -54,6 +54,7 @@ export default {
     '~/plugins/filters',
     '~/plugins/axios',
     '~/plugins/bbs-go',
+    '~/plugins/vuetimeline',
     { src: '~/plugins/vue-lazyload', ssr: false },
     { src: '~/plugins/viewer.js', ssr: false },
   ],
@@ -114,12 +115,12 @@ export default {
           {
             libraryName: 'element-ui',
             styleLibraryName: 'theme-chalk',
-          },
-        ],
+          }
+        ]
       ],
       presets(env, [preset, options]) {
         return [['@nuxt/babel-preset-app', options]]
-      },
-    },
-  },
+      }
+    }
+  }
 }

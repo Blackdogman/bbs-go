@@ -24,7 +24,8 @@
     "qs": "^6.10.1",
     "v-viewer": "^1.6.4",
     "vue-click-outside": "^1.1.0",
-    "vue2-animate": "^2.1.4"
+    "vue2-animate": "^2.1.4",
+    "@growthbunker/vuetimeline": "^0.1.17"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",

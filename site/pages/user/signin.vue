@@ -172,7 +172,11 @@ export default {
           },
         })
         this.captchaId = ret.captchaId
-        this.captchaUrl = "/api/captcha/show?captchaId=" + this.captchaId + "&timestamp=" + new Date().getTime();
+        this.captchaUrl =
+          '/api/captcha/show?captchaId=' +
+          this.captchaId +
+          '&timestamp=' +
+          new Date().getTime()
       } catch (e) {
         this.$message.error(e.message || e)
       }

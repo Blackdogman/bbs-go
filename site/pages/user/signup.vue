@@ -181,7 +181,11 @@ export default {
       try {
         const ret = await this.$axios.get('/api/captcha/request')
         this.captchaId = ret.captchaId
-        this.captchaUrl = "/api/captcha/show?captchaId=" + this.captchaId + "&timestamp=" + new Date().getTime();
+        this.captchaUrl =
+          '/api/captcha/show?captchaId=' +
+          this.captchaId +
+          '&timestamp=' +
+          new Date().getTime()
         this.captchaCode = ''
       } catch (e) {
         this.$message.error(e.message || e)

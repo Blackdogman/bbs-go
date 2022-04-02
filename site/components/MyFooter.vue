@@ -8,7 +8,10 @@
       </div>
       <div>
         © 2022 Powered by
-        <a href="https://github.com/Blackdogman/bbs-go" target="_blank" class="light"
+        <a
+          href="https://github.com/Blackdogman/bbs-go"
+          target="_blank"
+          class="light"
           >ROCKBDM</a
         >
       </div>
