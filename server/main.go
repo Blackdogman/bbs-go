@@ -3,9 +3,7 @@ package main
 import (
 	"bbs-go/controllers"
 	"bbs-go/model"
-	"bbs-go/pkg/common"
 	"bbs-go/pkg/config"
-	"bbs-go/scheduler"
 	_ "bbs-go/services/eventhandler"
 	"flag"
 	"io"
@@ -52,9 +50,9 @@ func init() {
 }
 
 func main() {
-	if common.IsProd() {
-		// 开启定时任务
-		scheduler.Start()
-	}
+	// if common.IsProd() {
+	// 	// 开启定时任务
+	// 	scheduler.Start()
+	// }
 	controllers.Router()
 }

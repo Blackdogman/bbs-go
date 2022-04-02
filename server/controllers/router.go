@@ -74,6 +74,7 @@ func Router() {
 		m.Party("/search").Handle(new(api.SearchController))
 		m.Party("/fans").Handle(new(api.FansController))
 		m.Party("/feed").Handle(new(api.FeedController))
+		m.Party("/apex/session").Handle(new(api.ApexSessionController))
 	})
 
 	// admin
